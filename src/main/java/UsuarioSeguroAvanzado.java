@@ -147,10 +147,73 @@ this.bloqueado = false;
 
 }
 
+    public boolean cambiarPassword(String actual, String nueva) {
+
+        if (bloqueado) {
+
+            return false;
+
+        }
+        if (!this.password.equals(actual)) {
+
+            return false;
+
+        }
+        if (!validarPasswordSegura(nueva)) {
+
+return false;
+
+
+}
+
+        this.password = nueva;
+
+return true;
+
+}
 
 
 
 
+        public boolean validarPasswordSegura(String nueva) {
+
+if (nueva == null || nueva.length() < 8) {
+
+return false;
+
+}
+
+
+
+boolean tieneMayuscula = false;
+
+boolean tieneNumero = false;
+
+
+
+for (int i = 0; i < nueva.length(); i++) {
+
+char c = nueva.charAt(i);
+
+if (Character.isUpperCase(c)) {
+
+tieneMayuscula = true;
+
+}
+
+if (Character.isDigit(c)) {
+
+tieneNumero = true; // t minúscula
+
+}
+
+}
+
+
+
+return tieneMayuscula && tieneNumero;
+
+}
 
 }
 
