@@ -12,6 +12,7 @@ public class Main {
         System.out.print("Ingrese username: ");
         String username = sc.nextLine();
 
+
         System.out.print("Ingrese password inicial: ");
         String password = sc.nextLine();
 
